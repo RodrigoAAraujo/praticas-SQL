@@ -1,3 +1,3 @@
-# praticas-SQL
+# Praticas-SQL
 
-#Rodrigo Antunes Araújo
+Rodrigo Antunes Araújo
