@@ -1,0 +1,4 @@
+CREATE TABLE photos(
+    id SERIAL PRIMARY KEY,
+    photo IMAGE NOT NULL UNIQUE
+)
