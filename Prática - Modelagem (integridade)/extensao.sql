@@ -50,7 +50,7 @@ CREATE TYPE "transactions" AS ENUM ('deposit', 'withdraw');
 CREATE TABLE transactions(
     id SERIAL PRIMARY KEY,
     bank_id INTEGER NOT NULL REFERENCES "bankAccounts"("id"),
-    amount INTEGER NOT NULL,
+    amount BIGINT NOT NULL,
     type ENUM('deposit', 'withdraw'),
     time DATETIME NOT NULL DEFAULT NOW(),
     description TEXT NOT NULL,
