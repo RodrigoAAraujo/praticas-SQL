@@ -50,7 +50,7 @@ CREATE TABLE transactions(
     type ENUM('deposit', 'withdraw'),
     time DATETIME NOT NULL DEFAULT NOW(),
     description TEXT NOT NULL,
-    cancelled BOOLEAN NOT NULL DEFAULT 0
+    cancelled BOOLEAN NOT NULL DEFAULT 'FALSE'
 )
 
 CREATE TABLE creditCards(
