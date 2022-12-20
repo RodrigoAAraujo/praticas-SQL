@@ -39,10 +39,10 @@ CREATE TABLE customerPhones(
 CREATE TABLE bankAccounts(
     id SERIAL PRIMARY KEY,
     customer_id INTEGER NOT NULL REFERENCES "customers"("id"),
-    "accountNumber" TEXT NOT NULL,
+    "accountNumber" TEXT NOT NULL UNIQUE,
     agency TEXT NOT NULL,
-    "openDate" DATE NOT NULL,
-    "closeDate" DATE DEFAULT 'NULL'
+    "openDate" DATE NOT NULL DEFAULT NOW(),
+    "closeDate" DATE
 )
 
 CREATE TYPE "transactions" AS ENUM ('deposit', 'withdraw');
