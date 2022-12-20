@@ -21,8 +21,8 @@ CREATE TABLE customerAddresses(
 CREATE TABLE customers(
     id SERIAL PRIMARY KEY,
     full_name TEXT NOT NULL,
-    cpf VARCHAR(11) NOT NULL,
-    email TEXT NOT NULL,
+    cpf VARCHAR(11) NOT NULL UNIQUE,
+    email TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL,
     address_id INTEGER NOT NULL REFERENCES "customerAddresses"("id")
 )
@@ -57,7 +57,7 @@ CREATE TABLE creditCards(
     id SERIAL PRIMARY KEY,
     bank_id INTEGER NOT NULL REFERENCES "bankAccounts"("id"),
     name TEXT NOT NULL,
-    number INTEGER NOT NULL,
+    number INTEGER NOT NULL UNIQUE,
     "securityNumber" VARCHAR(3) NOT NULL,
     "expirationMonth" INTEGER NOT NULL CHECK("expirationMonth" > 0 AND "expirationMonth" < 13),
     "expirationYear" INTEGER NOT NULL CHECK("expirationYear" >= YEAR(NOW())),
