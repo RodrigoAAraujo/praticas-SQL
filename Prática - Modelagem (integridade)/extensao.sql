@@ -27,6 +27,8 @@ CREATE TABLE customers(
     address_id INTEGER NOT NULL REFERENCES "customerAddresses"("id")
 )
 
+CREATE TYPE "phone" AS ENUM ('landline', 'mobile');
+
 CREATE TABLE customerPhones(
     id SERIAL PRIMARY KEY,
     customer_id INTEGER NOT NULL REFERENCES "customers"("id"),
@@ -42,6 +44,8 @@ CREATE TABLE bankAccounts(
     "openDate" DATE NOT NULL,
     "closeDate" DATE DEFAULT NULL
 )
+
+CREATE TYPE "transactions" AS ENUM ('deposit', 'withdraw');
 
 CREATE TABLE transactions(
     id SERIAL PRIMARY KEY,
