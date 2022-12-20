@@ -42,7 +42,7 @@ CREATE TABLE bankAccounts(
     "accountNumber" TEXT NOT NULL,
     agency TEXT NOT NULL,
     "openDate" DATE NOT NULL,
-    "closeDate" DATE DEFAULT NULL
+    "closeDate" DATE DEFAULT 'NULL'
 )
 
 CREATE TYPE "transactions" AS ENUM ('deposit', 'withdraw');
